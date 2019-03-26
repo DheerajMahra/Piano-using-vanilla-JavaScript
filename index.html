@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8"/>
+  <title>Piano - Vanilla JavaScript</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="style.css" rel="stylesheet"/>
+</head>
+
+<body>
+  
+  <div class="octave">
+    
+    <div class="white c" data-key="65"></div>
+    <div class="black cs" data-key="87"></div>
+    <div class="white d" data-key="83"></div>
+    <div class="black ds" data-key="69"></div>
+    <div class="white e" data-key="68"></div>
+    <div class="white f" data-key="70"></div>
+    <div class="black fs" data-key="84"></div>
+    <div class="white g" data-key="71"></div>
+    <div class="black gs" data-key="89"></div>
+    <div class="white a" data-key="72"></div>
+    <div class="black as" data-key="85"></div>
+    <div class="white b" data-key="74"></div>
+    <div class="white ch" data-key="75"></div>
+    
+  </div>
+  
+  <audio data-key="65" src="mp3/c.wav"></audio>
+  <audio data-key="87" src="mp3/cs.wav"></audio>
+  <audio data-key="83" src="mp3/d.wav"></audio>
+  <audio data-key="69" src="mp3/ds.wav"></audio>
+  <audio data-key="68" src="mp3/e.wav"></audio>
+  <audio data-key="70" src="mp3/f.wav"></audio>
+  <audio data-key="84" src="mp3/fs.wav"></audio>
+  <audio data-key="71" src="mp3/g.wav"></audio>
+  <audio data-key="89" src="mp3/gs.wav"></audio>
+  <audio data-key="72" src="mp3/a.wav"></audio>
+  <audio data-key="85" src="mp3/as.wav"></audio>
+  <audio data-key="74" src="mp3/b.wav"></audio>
+  <audio data-key="75" src="mp3/ch.wav"></audio>
+
+  
+  <script>
+  
+    function play(e) {
+    
+      const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+      
+      const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
+      
+      if(!audio) return;
+      
+      audio.currentTime = 0;
+      audio.play();
+      
+      if( e.keyCode == 87 || e.keyCode == 69 ||
+          e.keyCode == 84 || e.keyCode == 89||
+          e.keyCode == 85 ) {
+            key.classList.add("blackpressed");
+            setTimeout(function removePress() {
+            key.classList.remove("blackpressed")
+          }, 200);
+      } else {
+          key.classList.add("whitepressed");
+          setTimeout(function removePress() {
+            key.classList.remove("whitepressed")
+          }, 200);
+      }
+      
+    }
+    
+    window.addEventListener("keydown", play);
+  
+  </script>
+</body>
+  
+</html>

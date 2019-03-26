@@ -1,0 +1,138 @@
+body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Poppins';
+  background: linear-gradient( 109.6deg,  rgba(156,252,248,1) 11.2%, rgba(110,123,251,1) 91.1% ) no-repeat;
+  background-size: cover;
+}
+
+.octave {
+  position: relative;
+  width: 800px;
+  height: 300px;
+  margin: auto;
+  top:30%;
+  border: 1px solid #000;
+  box-shadow: 1px 1px 30px #000;
+}
+
+.white {
+  width: 99px;
+  height: 300px;
+  background: #fff;
+  float: left;
+  border-right: 1px solid #000;
+}
+
+.white:last-child {
+  width: 100px;
+  border-right: none;
+}
+
+.black {
+  position: absolute;
+  width: 50px;
+  height: 175px;
+  background: #000;
+  transition: all 0.3s ease-in-out;
+}
+
+.cs {
+  left: 75px;
+}
+
+.ds {
+  left: 175px;
+}
+
+.fs {
+  left: 375px;
+}
+
+.gs {
+  left: 475px;
+}
+
+.as {
+  left: 575px;
+}
+
+.c:after, .d:after, .e:after, .f:after, .g:after, .a:after, .b:after, .ch:after {
+  
+  display: block;
+  text-align: center;
+  margin-top: 270px;
+}
+
+.cs:after, .ds:after, .fs:after, .gs:after, .as:after {
+
+  color: #fff;
+  display: block;
+  text-align: center;
+  margin-top: 140px;
+}
+  
+.c::after {
+  content: "A";
+}
+
+.cs::after {
+  content: "W";
+
+}
+
+.d::after {
+  content: "S";
+}
+
+.ds::after {
+  content: "E";
+
+}
+
+.e::after {
+  content: "D";
+}
+
+.f::after {
+  content: "F";
+}
+
+.fs::after {
+  content: "T";
+}
+
+.g::after {
+  content: "G";
+}
+
+.gs::after {
+  content: "Y";
+}
+
+.a::after {
+  content: "H";
+}
+
+.as::after {
+  content: "U";
+}
+
+.b::after {
+  content: "J";
+}
+
+.ch::after {
+  content: "K";
+}
+
+.whitepressed {
+  background-image: linear-gradient( 109.6deg,  rgba(156,252,248,1) 11.2%, rgba(110,123,251,1) 91.1% );
+}
+
+.blackpressed {
+ background-image: linear-gradient( 109.6deg,  rgba(61,106,239,1) 11.2%, rgba(122,14,190,1) 70.2% );
+}
+
+
